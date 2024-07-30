@@ -130,4 +130,4 @@ dist
 .pnp.*
 
 # cloudinary
-cloudinary.js
+server/cloudinary.js
