@@ -130,4 +130,8 @@ dist
 .pnp.*
 
 # cloudinary
+<<<<<<< HEAD
 server/cloudinary.js
+=======
+server/cloudinary.js
+>>>>>>> e7ef2ad539ed1b8ce45fc73bfa70a251a0806534
