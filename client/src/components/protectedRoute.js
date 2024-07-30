@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { SetAllUsers, SetUser, SetAllChats } from "../redux/userSlice";
 import {GetAllChats} from "../apicalls/chats";
 import {io} from "socket.io-client";
-const socket = io("http://localhost:5000");
 
 function ProtectedRoute({children}){
     const {user} = useSelector(state => state.userReducer);
