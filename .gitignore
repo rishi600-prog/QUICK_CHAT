@@ -1,3 +1,6 @@
+# cloudinary
+server/cloudinary.js
+
 # Logs
 logs
 *.log
@@ -129,5 +132,3 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# cloudinary
-server/cloudinary.js
