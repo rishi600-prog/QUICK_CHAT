@@ -24,11 +24,11 @@ function UsersList(props) {
 
     const ShowProfilePic = (userObject) =>
         {
-            if(userObject.profilePic)
+            if(userObject?.profilePic)
                 {
                     return (
                         <img 
-                            src = {userObject.profilePic}
+                            src = {userObject?.profilePic}
                             alt = "profile-pic"
                             className="w-10 h-10 rounded-full"
                         />
@@ -38,7 +38,7 @@ function UsersList(props) {
                 {
                     return(
                         <div className="bg-gray-400 rounded-full h-10 w-10 flex items-center justify-center relative">
-                            <h1 className="uppercase text-xl font-semibold text-white">{userObject.name[0]}</h1>
+                            <h1 className="uppercase text-xl font-semibold text-white">{userObject?.name[0]}</h1>
                         </div>
                     );
                 }
@@ -100,7 +100,7 @@ function UsersList(props) {
         {
             const chat = allChats.find( (chat) => chat.members.map((mem) => mem._id).includes(userObj._id) );
 
-            if(!chat || !chat.lastMessage)
+            if(!chat || !chat?.lastMessage)
                 {
                     return "";
                 }
@@ -151,10 +151,10 @@ function UsersList(props) {
                 //if the chat area opened is not equal to chat in message, then increase unread messages by 1 and update last message
                 const tempSelectedChat = store.getState().userReducer.selectedChat;
                 let tempAllChats = store.getState().userReducer.allChats;
-                if(tempSelectedChat?._id !== message.chat)
+                if(tempSelectedChat?._id !== message?.chat)
                 {
                     const updatedAllChats = tempAllChats.map((chat) => {
-                        if(chat._id === message.chat)
+                        if(chat?._id === message?.chat)
                         {
                             return (
                                 {
@@ -170,8 +170,8 @@ function UsersList(props) {
                 }
 
                 //always latest message chat will be on top
-                const latestChat = tempAllChats.find((chat) => chat._id === message.chat);
-                const otherChats = tempAllChats.filter((chat) => chat._id !== message.chat);
+                const latestChat = tempAllChats.find((chat) => chat?._id === message?.chat);
+                const otherChats = tempAllChats.filter((chat) => chat?._id !== message?.chat);
                 tempAllChats = [latestChat, ...otherChats];
 
                 dispatch(SetAllChats(tempAllChats));
