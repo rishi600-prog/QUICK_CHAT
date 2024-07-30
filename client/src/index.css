@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    font-family: 'Montserrat';
+    font-size: 16px;
+    /* font-weight: 500; */
+    font-weight: bold;
+}
+input{
+    height: 40px;
+    border: 1px solid rgb(112,124,181);
+    padding-left: 20px;
+}
+
+input:focus{
+    outline:none;
+    border: 2px solid black;
+}
+
+.outlined-button{
+    border: 1px solid #302550;
+    color: #302550;
+    padding: 10px 20px;
+    height: 45px;
+    text-transform: uppercase;
+}
+
+.contained-button{
+    background-color: #302550;
+    color: white;
+    padding: 5px 20px;
+    height: 45px;
+    text-transform: uppercase;
+}
+
+.disabled-btn{
+    background-color: #cac8cd;
+    color: rgb(90,90,90);
+    padding: 5px 20px;
+    height: 40px;
+    text-transform: uppercase;
+    opacity: 0.5;
+}
+
+.file-input{
+    border: none !important;
+}
+
+.background-color{
+    background-color: rgb(37, 122, 136);
+}
