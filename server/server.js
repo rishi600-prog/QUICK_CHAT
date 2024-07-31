@@ -54,6 +54,12 @@ io.on("connection", (socket) => {
         onlineUsers = onlineUsers.filter((user) => user !== userId);
         io.emit("online-users-updated", onlineUsers);
     });
+
+    // Listen for 'new-chat' event and broadcast it
+    socket.on('new-chat', (data) => {
+        socket.broadcast.emit('new-chat', data);
+    });
+
 });
 
 //check the connection  of socket from client

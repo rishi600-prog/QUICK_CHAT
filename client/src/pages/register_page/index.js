@@ -87,7 +87,7 @@ function Register() {
                 <hr />
                 <input
                     type="text"
-                    autocomplete="off"
+                    autoComplete="off"
                     placeholder="Enter your name"
                     value={user.name}
                     onChange={(event) => setUser({...user, name: event.target.value})} 
@@ -95,7 +95,7 @@ function Register() {
                 <input
                     type="email"
                     id='email'
-                    autocomplete="off"
+                    autoComplete="off"
                     placeholder="Enter your email"
                     value={user.email}
                     onChange={(event) => setUser({...user, email: event.target.value})} 
@@ -104,7 +104,7 @@ function Register() {
                 <input
                     type="password"
                     id='password'
-                    autocomplete="off"
+                    autoComplete="off"
                     placeholder="Enter your password"
                     value={user.password}
                     onChange={(event) => setUser({...user, password: event.target.value})} 

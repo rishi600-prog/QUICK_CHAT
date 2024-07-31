@@ -75,7 +75,7 @@ function Login() {
                     <input
                         type="email"
                         id='email'
-                        autocomplete="off"
+                        autoComplete="off"
                         placeholder="Enter your email"
                         value={user.email}
                         onChange={(event) => setUser({...user, email: event.target.value})} 
@@ -83,7 +83,7 @@ function Login() {
                     <p id='result'></p>
                     <input
                         type="password"
-                        autocomplete="off"
+                        autoComplete="off"
                         placeholder="Enter your password"
                         value={user.password}
                         onChange={(event) => setUser({...user, password: event.target.value})} 

@@ -11,7 +11,7 @@ import EmojiPicker from "emoji-picker-react";
 
 
 
-function ChatArea({socket}) {
+function ChatArea(props) {
     const [showEmojiPicker, setShowEmojiPicker] = React.useState(false);
     const [isReceipentTyping , setIsReceipentTyping] = React.useState(false);
     const dispatch = useDispatch();
@@ -54,7 +54,7 @@ function ChatArea({socket}) {
             };
 
             //send message to server using socket
-            socket.emit("send-message" , {
+            props.socket.emit("send-message" , {
                 ...message,
                 members: selectedChat.members.map((mem) => mem._id),
                 createdAt: moment().format('YYYY-MM-DD[T]HH:mm:ss'),
@@ -92,7 +92,7 @@ function ChatArea({socket}) {
     async function clearUnreadMessages()
     {
         try{
-            socket.emit("clear-unread-messages" , {
+            props.socket.emit("clear-unread-messages" , {
                 chat: selectedChat._id,
                 members: selectedChat.members.map((mem) => mem._id)
             });
@@ -136,7 +136,7 @@ function ChatArea({socket}) {
             clearUnreadMessages();
 
         //receive message from server using socket
-        socket.off("receive-message").on("receive-message" , (message) => {
+        props.socket.off("receive-message").on("receive-message" , (message) => {
             const selectedChatTemp = store.getState().userReducer.selectedChat;//we cannot access the states or redux variables directly in the socket events.
             if(selectedChatTemp._id === message.chat)
             {
@@ -150,7 +150,7 @@ function ChatArea({socket}) {
         });
 
         //clear unread messages from server using socket
-        socket.on("unread-messages-cleared" , (data) => {
+        props.socket.on("unread-messages-cleared" , (data) => {
             const tempAllChats = store.getState().userReducer.allChats;
             const tempSelectedChat = store.getState().userReducer.selectedChat;
 
@@ -185,7 +185,7 @@ function ChatArea({socket}) {
         });
 
         //receipent typing
-        socket.on("started-typing" , (data) => {
+        props.socket.on("started-typing" , (data) => {
             const selectedChat = store.getState().userReducer.selectedChat;
             if(data.chat === selectedChat._id && data.sender!==user._id)
             {
@@ -263,7 +263,7 @@ function ChatArea({socket}) {
                         value={newMessage}
                         onChange={(event) => {
                             setNewMessage(event.target.value);
-                            socket.emit("typing" , {
+                            props.socket.emit("typing" , {
                                 chat: selectedChat._id,
                                 members: selectedChat.members.map((mem) => mem._id),
                                 sender: user._id

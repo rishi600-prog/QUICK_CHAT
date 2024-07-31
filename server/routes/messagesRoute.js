@@ -46,7 +46,7 @@ router.get("/getallmessages/:chatId" , async(req,res) => {
             message: "Messages fetched successfully",
             data: messages
         });
-    }catch(error){
+    }catch(err){
         res.send({
             success: false,
             message: "Error fetching messages",
