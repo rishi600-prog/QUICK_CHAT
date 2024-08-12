@@ -44,7 +44,7 @@ function ProtectedRoute({children}){
         else
             navigate("/login");
 
-    }, []);
+    }, [getCurrentUser,navigate]);
 
     return(
         <div className="h-screen w-screen bg-gray-100 p-2">
