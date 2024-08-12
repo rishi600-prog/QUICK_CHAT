@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import {io} from "socket.io-client";
 import chatpng from "../../images/pngwing.png"
 // connecting server from client using this socket in client
-const socket = io(""); //establish connection to localhost 5000 : afterwards emit and listen the events 
+const socket = io("https://quick-chat-s88w.onrender.com"); //establish connection to localhost 5000 : afterwards emit and listen the events 
 localStorage.setItem('socket', socket);
 
 function Home() {
