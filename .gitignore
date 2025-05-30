@@ -8,7 +8,7 @@
 
 # Dependency directories
 /node_modules
-server/cloudinary.js
+/server/cloudinary.js
 /.pnp
 .pnp.js
 
