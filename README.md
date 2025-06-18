@@ -1,4 +1,4 @@
-# 💬 QUICK_CHAT
+#  QUICK_CHAT
 
 QUICK_CHAT is a real-time, one-on-one messaging web application. Built with full-stack technologies and web sockets.
 
