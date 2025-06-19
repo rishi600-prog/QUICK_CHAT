@@ -8,6 +8,8 @@ QUICK_CHAT is a real-time, one-on-one messaging web application. Built with full
 
 **Frontend:**
 - React.js
+- HTML
+- javascript
 - Tailwind CSS / CSS Modules
 - Axios
 
