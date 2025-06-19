@@ -30,6 +30,6 @@ QUICK_CHAT is a real-time, one-on-one messaging web application. Built with full
 
 ##  Live Demo
 
->  [Click to view the app](https://news-application-5vzt.onrender.com)  
+>  [Click to view the app]([https://news-application-5vzt.onrender.com](https://quick-chat-s88w.onrender.com/))  
 
 ---
