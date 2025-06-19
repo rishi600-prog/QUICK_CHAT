@@ -25,3 +25,11 @@ QUICK_CHAT is a real-time, one-on-one messaging web application. Built with full
 **Authentication:**
 - JWT (JSON Web Tokens)
 - Bcrypt.js
+
+---
+
+##  Live Demo
+
+>  [Click to view the app](https://news-application-5vzt.onrender.com)  
+
+---
